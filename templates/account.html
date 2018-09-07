@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <script src="https://dfsitd0y39pw1.cloudfront.net/_ui/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/frontend.js" type="text/javascript"></script>
+    <script src="/js/account.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <h2>Account</h2>
+    <dl>
+      <dt>First name</dt> <dd id="first_name">{{.User.FirstName}}</dd>
+      <dt>Last name</dt> <dd id="last_name">{{.User.LastName}}</dd>
+      <dt>E-mail</dt> <dd id="email">{{.User.Email}}</dd>
+      <dt>Last login at</dt> <dd id="last_login_at">{{.User.LastLoginAt}}</dd>
+      <dt>Admin rights</dt> <dd id="is_admin">{{.User.IsAdmin}}</dd>
+      <dt>End of session</dt> <dd>{{.Exp}}</dd>
+    </dl>
+    <form action="/logout" method="POST">
+      <input type="hidden" name="logout" value="logout"/>
+      <input type="submit" value="Log out"/>
+    </form>
+  </body>
+</html>
