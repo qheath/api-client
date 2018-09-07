@@ -63,7 +63,7 @@ func registerPage(httpWriter http.ResponseWriter, httpRequest *http.Request, tim
     FirstName: "foo"+now,
     LastName: "bar"+now,
     Email: now+"@example.com",
-    Password: "querty",
+    Password: "qwerty",
   }
 
   err := templates.ExecuteTemplate(httpWriter, "register.html", new_user)
