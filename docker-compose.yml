@@ -1,0 +1,19 @@
+version: "3"
+networks:
+    sso_network:
+        driver: bridge
+services:
+    client:
+        build: .docker
+        container_name: sso_client
+        entrypoint: /go/src/app/run.sh
+        expose:
+            - "8090"
+        networks:
+            - sso_network
+        ports:
+            - "8090:8090"
+        volumes:
+            - .docker/run.sh:/go/src/app/run.sh
+            - .:/go/src/app
+        working_dir: "/go/src/app"
